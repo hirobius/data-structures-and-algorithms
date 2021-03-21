@@ -10,8 +10,8 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 
 const addOne = (arr) => {
   const answer = [];
-  arr.forEach(function (value, i) {
-    answer.push(value + 1);
+  arr.forEach(function (num) {
+    answer.push(num + 1);
   });
   return answer;
 };
@@ -26,8 +26,8 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   const answer = [];
-  arr.forEach(function (value, i) {
-    answer.push(value + '!');
+  arr.forEach(function (str) {
+    answer.push(str + '!');
   });
   return answer;
 };
@@ -40,46 +40,42 @@ Write a function named `allUpperCase` that takes an array of strings, and return
 Use `forEach` to loop over the input array. The modified strings should each be added into a local array. Return that local array.
 ------------------------------------------------------------------------------------------------ */
 
-const allUpperCase = (arr) => {
-  // I don't get this one
-  const answer = [];
-  arr.forEach(function (value, i) {
-    // answer.map(a => a.toUpperCase());
-    // answer.toUpperCase();
-    answer.push(value);
-  });
-  return answer();
+// so if I call it str instead of value, because that is a better name…  I might write arr.forEach(str => newArray.push(str.toUpperCase()))
+// you are pushing what ever str.toUpperCase() evaluates to instead of trying to change str intself
+
+const allUpperCase = (banana) => {
+  const apple = [];
+  banana.forEach (str => apple.push(str.toUpperCase()));
+  return apple;
 };
 
-const allUpperCase = (arr) => {
-  // I don't get this one
-  const answer = [];
-  arr.forEach(function toUpperCase(value, i) {
-    answer.push(value);
-  });
-  return answer;
-};
-
+// Aloysius' Solution!:
+// const allUpperCase = (arr) => {
+//   const answer = [];
+//   arr.forEach( element => {
+//     answer.push(element.toUpperCase());
+//   });
+//   return answer;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
 Write a function named `greeting` that takes in a single string and returns the string in all uppercase letters, and followed by an "!".
 
-Then, write a function named `speaker` that takes in an array of strings and a callback function. 
+Then, write a function named `speaker` that takes in an array of strings and a callback function.
 
-Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
+Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
+
 ------------------------------------------------------------------------------------------------ */
 
-const greeting = (word) => {
-  word.forEach(function (value, i) {
-    this.word.toUpperCase + '!';
-  });
-};
+// const greeting = (word) => {
+//   (value + '!')
+// };
 
-const speaker = (words, callback) => {
-  // Solution code here...
-};
+// const speaker = (words, callback) => {
+//   // Solution code here...
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -97,19 +93,19 @@ Within the addNumbers function, invoke the callback function as many times as ne
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
-const addValues = (arr, value) => {
-  // ?
-  arr = [];
-  arr.push(value);
-};
+// const addValues = (arr, value) => {
+//   // ?
+//   arr = [];
+//   arr.push(value);
+// };
 
-const addNumbers = (num, arr, times, callback) => {
-  // Not sure what solution code goes here...
-  const num = num;
-  const arr = arr;
-  const times = times;
-  const callback = callback;
-};
+// const addNumbers = (num, arr, times, callback) => {
+//   // Not sure what solution code goes here...
+//   const num = num;
+//   const arr = arr;
+//   const times = times;
+//   const callback = callback;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 
@@ -129,16 +125,16 @@ The inventory is formatted like this:
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
 
-const createList = (availableItems) => {
-  // Solution code here...
-  const availableItems = [
-    { name: 'apples', available: true },
-    { name: 'pears', available: true },
-    { name: 'oranges', available: false },
-    { name: 'bananas', available: true },
-    { name: 'blueberries', available: false }
-  ]
-};
+// const createList = (availableItems) => {
+//   // Solution code here...
+//   const availableItems = [
+//     { name: 'apples', available: true },
+//     { name: 'pears', available: true },
+//     { name: 'oranges', available: false },
+//     { name: 'bananas', available: true },
+//     { name: 'blueberries', available: false }
+//   ]
+// };
 
 /* ------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
