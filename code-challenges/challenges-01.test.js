@@ -82,6 +82,7 @@ const speaker = (words, callback) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
+
 CHALLENGE 5
 
 Write a function named addValues that takes in an array and a value and pushes the value into the array. This function does not need a return statement.
@@ -95,21 +96,19 @@ Then, write a function named addNumbers that takes in four arguments:
 Within the addNumbers function, invoke the callback function as many times as necessary, based on the third argument of the addNumbers function.
 
 Return the modified array.
------------------------------------------------------------------------------------------------- */
 
-// const addValues = (arr, value) => {
-//   // ?
-//   arr = [];
-//   arr.push(value);
-// };
+--------------------------------------------------------------------------------------------------- */
 
-// const addNumbers = (num, arr, times, callback) => {
-//   // Not sure what solution code goes here...
-//   const num = num;
-//   const arr = arr;
-//   const times = times;
-//   const callback = callback;
-// };
+const addValues = (arr, value) => {
+  arr.push(value);
+};
+
+const addNumbers = (num, arr, times, callback) => {
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
+  }
+  return arr;
+};
 
 /* ------------------------------------------------------------------------------------------------
 
@@ -126,19 +125,27 @@ The inventory is formatted like this:
   { name: 'blueberries', available: false }
 ]
 
+
+
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
+
 ------------------------------------------------------------------------------------------------ */
 
-// const createList = (availableItems) => {
-//   // Solution code here...
-//   const availableItems = [
-//     { name: 'apples', available: true },
-//     { name: 'pears', available: true },
-//     { name: 'oranges', available: false },
-//     { name: 'bananas', available: true },
-//     { name: 'blueberries', available: false }
-//   ]
-// };
+const createList = (availableItems) => {
+  // need a new array that takes in an array of the current store inventory
+  const newArray = [];
+  // need a forEach for each available item (available items)
+  availableItems.forEach(item => {
+    if (item.available) {
+      newArray.push(item.name);
+    }
+  });
+  return newArray;
+};
+
+// need if statement inside the array to check if item is available
+// if true, let's push it into the list
+// return the array
 
 /* ------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
@@ -155,7 +162,14 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  // take in array of numbers
+  // iterate over the array using forEach
+  // make the forEach determine the output based on several rules
+  // - if the number is divisible by 3, add the word "Fizz" to the output array
+  // - if the number is divisible by 5, add the word "Buzz" to the output array
+  // - if the number is divisible by both 3 and 5, add the phrase "Fizz Buzz" to the output array.
+  // - otherwise, add the number to the output array
+  // return the resulting output array
 };
 
 /* ------------------------------------------------------------------------------------------------
