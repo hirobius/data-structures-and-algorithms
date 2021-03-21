@@ -45,7 +45,7 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (banana) => {
   const apple = [];
-  banana.forEach(str => apple.push(str.toUpperCase()));
+  banana.forEach (str => apple.push(str.toUpperCase()));
   return apple;
 };
 
@@ -140,7 +140,6 @@ const createList = (availableItems) => {
   });
   return newArray;
 };
-
 // need if statement inside the array to check if item is available
 // if true, let's push it into the list
 // return the array
