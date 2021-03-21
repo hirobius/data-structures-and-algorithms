@@ -125,8 +125,6 @@ The inventory is formatted like this:
   { name: 'blueberries', available: false }
 ]
 
-
-
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 
 ------------------------------------------------------------------------------------------------ */
@@ -161,16 +159,32 @@ Iterate over the array using forEach to determine the output based on several ru
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
+// undefined ??
 const fizzbuzz = (arr) => {
   // take in array of numbers
+  const answer = [];
   // iterate over the array using forEach
-  // make the forEach determine the output based on several rules
-  // - if the number is divisible by 3, add the word "Fizz" to the output array
-  // - if the number is divisible by 5, add the word "Buzz" to the output array
-  // - if the number is divisible by both 3 and 5, add the phrase "Fizz Buzz" to the output array.
-  // - otherwise, add the number to the output array
-  // return the resulting output array
+  arr.forEach(num => {
+    if (num % 3 === 0 && num % 5 === 0) {
+      answer.push('Fizz Buzz');
+    } else if (num % 3 === 0) {
+      answer.push('Fizz');
+    } else if (num % 5 === 0) {
+      answer.push('Buzz');
+    } else {
+      answer.push(num);
+    }
+    return answer;
+  });
 };
+
+// make the forEach determine the output based on several rules
+// - if the number is divisible by 3, add the word "Fizz" to the output array
+// - if the number is divisible by 5, add the word "Buzz" to the output array
+// - if the number is divisible by both 3 and 5, add the phrase "Fizz Buzz" to the output array.
+// - otherwise, add the number to the output array
+// return the resulting output array
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -223,7 +237,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
