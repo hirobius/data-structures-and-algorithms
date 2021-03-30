@@ -78,6 +78,9 @@ const mapTwoToThe = (arr) => {
   return answer;
 };
 
+// or:
+// const mapTwoToThe = (arr) => arr.map( arr => (Math.pow(2, arr))); !!!!!!
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
@@ -90,8 +93,9 @@ For example: charCode(['h','i']) returns [104, 105].
 
 const charCode = (arr) => {
   // Solution code here...
+  arr.charCodeAt
   let answer = arr.map( letter => letter )
-  return answer
+  return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
