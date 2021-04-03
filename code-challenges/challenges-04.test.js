@@ -23,7 +23,8 @@ function lower(str) {
 
 const updateAnimal = (arr, callback) => {
   // let newArray = [];
-  // newArray.push(callback());
+  // newArray.pushh
+  // callback();
   // return newArray;
 };
 
@@ -89,7 +90,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  // Solution code here...
+  return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
