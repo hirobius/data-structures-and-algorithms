@@ -43,7 +43,11 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
-  // Solution code here...
+  let initialValue = 0;
+  let sum = arr.reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue.purchasePrice;
+  }, initialValue);
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,7 +59,19 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  // Solution code here...
+  let counter = 0;
+  arr.reduce(function (acc, curr) {
+    if (curr in acc) {
+      acc[curr]++;
+      counter++;
+    }
+    else {
+      acc[curr] = 1;
+      counter++;
+    }
+    return acc;
+  }, {});
+  return counter;
 };
 
 /* ------------------------------------------------------------------------------------------------
