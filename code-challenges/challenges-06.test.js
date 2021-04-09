@@ -29,6 +29,8 @@ const getNames = (arr) => {
   return joinArray;
 };
 
+// let answer = arr.map(string => string.split('').reverse().join('').split(' ').reverse().join(' '));
+// return answer;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
