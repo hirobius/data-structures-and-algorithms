@@ -11,9 +11,10 @@ should convert to ["Jane Doe", "James Bond"]
 Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
-const toLastNames = people => {
-  // let answer = [];
-  // people.map
+
+const toLastNames = (people) => {
+  let answer = people.map( name => name.firstName + ' ' + name.lastName);
+  return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,7 +133,11 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+  let answer = [];
+  arr.reduce(function (acc, curr) {
+    answer.push(curr.name);
+  }, {});
+  return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -144,9 +149,14 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  const arr = str.split('');
+  const reverser = arr.reduce((acc, curr) => {
+    return curr + acc;
+  }, '');
+  return reverser;
 };
 
+// help from here: https://dev.to/sarah_chima/reverse-a-string-four-javascript-solutions-2nbm#:~:text=To%20use%20the%20reduce%20method,the%20code%20below%2C%20is%20reversed%20.
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
