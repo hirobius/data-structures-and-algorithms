@@ -25,8 +25,11 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  // Solution code here...
-}
+  starWarsArr.sort(function (a, b) {
+    return b.height - a.height;
+  });
+  return starWarsArr;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -35,7 +38,9 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  arr.slice(idx, 3);
+  let placeHolder = arr;
+  placeHolder.splice(idx, 3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,7 +50,7 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-  arr.join('');
+  return arr.join(' ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,9 +67,11 @@ For example, if the input is 'Welcome', the output will be:
 ------------------------------------------------------------------------------------------------ */
 
 const howMuchPencil = (str) => {
-  let result = [];
-  // Solution code here...
-  return result;
+  let answer = [];
+  for (let i = 0; i <= str.length; i++) {
+    answer.push(str.slice(i));
+  }
+  return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,9 +83,8 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  return arr.split('');
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -120,12 +126,15 @@ const gruffaloCrumble = {
   ]
 };
 
-
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  for (let i = 0; i < recipe.ingredients.length; i++) {
+    let temp = recipe.ingredients[i].indexOf(' ', 3);
+    result.push(recipe.ingredients[i].slice(temp + 1));
+  }
   return result;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
