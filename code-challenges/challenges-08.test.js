@@ -125,7 +125,7 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-  let validator = /\b[aAbBcCdDeEfFgGhHiIjJ]/;
+  let validator = /^[aAbBcCdDeEfFgGhHiIjJ]/g;
   return validator.test(arr);
 };
 
