@@ -25,7 +25,10 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  //
+  starWarsArr.sort(function (a, b) {
+    return b.height - a.height;
+  });
+  return starWarsArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -123,12 +126,15 @@ const gruffaloCrumble = {
   ]
 };
 
-
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  for (let i = 0; i < recipe.ingredients.length; i++) {
+    let temp = recipe.ingredients[i].indexOf(' ', 3);
+    result.push(recipe.ingredients[i].slice(temp + 1));
+  }
   return result;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
