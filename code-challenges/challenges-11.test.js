@@ -78,15 +78,19 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // ???
-  const newArr = [];
-  const answer = [];
-  if (input % 5 === 0) {
-    newArr.push(this);
-    for (let i = 0; i < input.length; i++) {
-      answer.push(Math.pow(2, newArr[i]));
-    }
-  }
-  return answer;
+
+  input.map(arr => arr.filter(x => !isNaN(x) && x % 5 === 0))
+
+
+  // const newArr = [];
+  // const answer = [];
+  // if (input % 5 === 0) {
+  //   newArr.push(this);
+  //   for (let i = 0; i < input.length; i++) {
+  //     answer.push(Math.pow(2, newArr[i]));
+  //   }
+  // }
+  // return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
